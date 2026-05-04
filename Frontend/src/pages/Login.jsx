@@ -1,0 +1,28 @@
+import React, { useState } from 'react'
+
+const Login = () => {
+  const [currentState, setCurrentState] = useState('Login');
+  const onSUbmitHandler = async (e) => {
+    e.preventDefault();
+  }
+  return (
+    <form onSubmit={onSUbmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800'>
+      <div className='inline-flex items-center gap-2 mb-2 mt-10'>
+        <p className='font-mono text-3xl'>{currentState}</p>
+        <hr className='border-none h-[1.5px] w-8 bg-gray-800'/>
+      </div>
+      {currentState === 'Sign Up' && (
+        <input required type="text" className='w-full px-3 py-2 border border-gray-800' placeholder='Name' />
+      )}
+      <input required type="email" className='w-full px-3 py-2 border border-gray-800' placeholder='Email' />
+      <input required type="password" className='w-full px-3 py-2 border border-gray-800' placeholder='Password' />
+      <div className='w-full flex justify-between text-sm mt-[-8px]'>
+        <p className='cursor-pointer'>Forgot your password?</p>
+        <p onClick={() => setCurrentState((currentState === 'Sign Up'? 'Login': 'Sign Up'))} className='cursor-pointer'>{currentState === 'Sign Up'? "Login Here": "Create account"}</p>
+      </div>
+      <button type='submit' className='cursor-pointer border px-8 py-2 text-sm font-light rounded-sm mt-4 bg-black text-white'>Sign In</button>
+    </form>
+  )
+}
+
+export default Login
