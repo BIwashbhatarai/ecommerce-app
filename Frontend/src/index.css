@@ -1,28 +1,9 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&display=swap');
 
-/* rest of your CSS */
-
-#taskList::-webkit-scrollbar {
-  display: none;
-}
-
-a.active hr {
-  display: block;
-}
+/* ========== GLOBAL STYLES ========== */
 
 * {
-  font-family: "Outfit", sans-serif;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.prata-regular {
-  font-family: "Prata", serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -30,9 +11,36 @@ body {
   scrollbar-width: none;
 }
 
+/* Hide scrollbars globally */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========== UTILITIES ========== */
+
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ========== NAV ACTIVE STATE ========== */
+
+a.active hr {
+  display: block;
+}
+
+/* ========== TASK LIST SCROLL HIDE ========== */
+
+#taskList::-webkit-scrollbar {
+  display: none;
+}
+
 #AllTask::-webkit-scrollbar {
   display: none;
 }
+
+/* ========== INPUT DATE ICON FIX ========== */
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
